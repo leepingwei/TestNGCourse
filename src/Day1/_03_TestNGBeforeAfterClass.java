@@ -1,4 +1,4 @@
-package Day15;
+package Day1;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
