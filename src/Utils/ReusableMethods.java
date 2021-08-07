@@ -1,12 +1,14 @@
 package Utils;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReusableMethods {
+public class ReusableMethods extends BaseDriver{
 
 
     // This method will convert WebElement list into String list and returns the String list
@@ -28,6 +30,14 @@ public class ReusableMethods {
         for (int i = 0; i < expectedItems.size(); i++){
             Assert.assertEquals(actualItems.get(i), expectedItems.get(i));
         }
+    }
+
+
+    public void verifySuccessMessage(WebDriver driver){
+
+        WebElement successMessage = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+
+        Assert.assertTrue(successMessage.getText().toLowerCase().contains("success"));
     }
 
 }

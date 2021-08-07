@@ -1,15 +1,17 @@
 package Day4;
 
 import Utils.BaseDriver;
+import Utils.ReusableMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class _01_Subscribe extends BaseDriver {
 
     @Test
     public void subscribeFunctionTest() {
+
+        ReusableMethods reusableMethods = new ReusableMethods();
 
         WebElement subscribeNewsletter = driver.findElement(By.linkText("Newsletter"));
         subscribeNewsletter.click();
@@ -29,9 +31,7 @@ public class _01_Subscribe extends BaseDriver {
         WebElement continueButton = driver.findElement(By.xpath("//input[@value='Continue']"));
         continueButton.click();
 
-        WebElement successMessage = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
-
-        Assert.assertEquals(successMessage.getText(), "Success: Your newsletter subscription has been successfully updated!");
+       reusableMethods.verifySuccessMessage(driver);
 
     }
 
