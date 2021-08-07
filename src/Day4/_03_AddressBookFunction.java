@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class _03_AddressBookFunction extends BaseDriver {
 
     ReusableMethods reusableMethods = new ReusableMethods();
@@ -27,10 +29,10 @@ public class _03_AddressBookFunction extends BaseDriver {
         newAddressButton.click();
 
         WebElement firstName = driver.findElement(By.id("input-firstname"));
-        firstName.sendKeys("Arya");
+        firstName.sendKeys("James");
 
         WebElement lastName = driver.findElement(By.id("input-lastname"));
-        lastName.sendKeys("Stark");
+        lastName.sendKeys("Bond");
 
         WebElement inputCompany = driver.findElement(By.id("input-company"));
         inputCompany.sendKeys("TechnoStudy");
@@ -69,5 +71,55 @@ public class _03_AddressBookFunction extends BaseDriver {
         reusableMethods.verifySuccessMessage(driver);
 
     }
+
+
+    @Test(dependsOnMethods = "addNewAddress")
+    public void editAddress(){
+
+        WebElement myAccountIcon = driver.findElement(By.xpath("//a[@title='My Account']"));
+        myAccountIcon.click();
+
+        WebElement myAccountButton = driver.findElement(By.xpath("(//a[text()='My Account'])[1] "));
+        myAccountButton.click();
+
+        WebElement addressBookButton = driver.findElement(By.xpath("//li//a[text()='Address Book']"));
+        addressBookButton.click();
+
+        List<WebElement> editOptions = driver.findElements(By.xpath("//a[text()='Edit']"));
+
+        editOptions.get(editOptions.size()-1).click();
+
+        WebElement firstName = driver.findElement(By.id("input-firstname"));
+        firstName.clear();
+        firstName.sendKeys("mark");
+
+        WebElement inputAddress1 = driver.findElement(By.id("input-address-1"));
+        inputAddress1.clear();
+        inputAddress1.sendKeys("200 Winterfell Road");
+
+        WebElement continueButton = driver.findElement(By.xpath("//input[@value='Continue']"));
+        continueButton.click();
+
+        reusableMethods.verifySuccessMessage(driver);
+
+    }
+
+    @Test(dependsOnMethods = "editAddress")
+    public void deleteAddress(){
+
+        WebElement myAccountIcon = driver.findElement(By.xpath("//a[@title='My Account']"));
+        myAccountIcon.click();
+
+        WebElement myAccountButton = driver.findElement(By.xpath("(//a[text()='My Account'])[1] "));
+        myAccountButton.click();
+
+        WebElement addressBookButton = driver.findElement(By.xpath("//li//a[text()='Address Book']"));
+        addressBookButton.click();
+
+        List<WebElement> deleteOptions = driver.findElements(By.xpath("//a[text()='Delete']"));
+        deleteOptions.get(deleteOptions.size()-1).click();
+
+    }
+
 
 }
