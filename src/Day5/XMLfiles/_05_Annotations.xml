@@ -1,0 +1,7 @@
+<suite name = "Suite">
+    <test name = "Test">
+        <classes>
+            <class name = "Day5._02_Annotations"></class>
+        </classes>
+    </test>
+</suite>
