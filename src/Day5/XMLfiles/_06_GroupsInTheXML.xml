@@ -1,0 +1,14 @@
+<suite name = "Suite">
+    <test name = "Test">
+
+        <groups>
+            <run>
+                <include name = "SmokeTest"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name = "Day5._03_Groups"></class>
+        </classes>
+    </test>
+</suite>
