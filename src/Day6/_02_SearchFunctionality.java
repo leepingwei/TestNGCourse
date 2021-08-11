@@ -11,7 +11,7 @@ import java.util.List;
 
 public class _02_SearchFunctionality extends BaseDriver {
 
-    @Test
+    @Test(groups = "Regression")
     @Parameters({"searchItem"})
     public void searchTest(String searchItem){
 
