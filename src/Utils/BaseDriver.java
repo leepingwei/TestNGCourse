@@ -13,7 +13,7 @@ public class BaseDriver {
     // should be public or protected
     protected WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup(){
         System.setProperty("webdriver.chrome.driver", "/Library/Selenium/chromedriver/chromedriver");
         driver = new ChromeDriver();
@@ -46,7 +46,7 @@ public class BaseDriver {
         homePageButton.click();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit(){
         driver.quit();
     }
