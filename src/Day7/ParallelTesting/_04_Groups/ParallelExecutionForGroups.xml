@@ -1,0 +1,27 @@
+<suite name = "Parallel Test For Groups" parallel = "tests" thread-count = "2">
+
+    <test name = "Smoke Test Run">
+        <groups>
+            <run>
+                <include name = "smoke"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name = "Day7.ParallelTesting._04_Groups.TestClass1"></class>
+            <class name = "Day7.ParallelTesting._04_Groups.TestClass2"></class>
+        </classes>
+    </test>
+
+    <test name = "Functional Test Run">
+        <groups>
+            <run>
+                <include name = "functional"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name = "Day7.ParallelTesting._04_Groups.TestClass1"></class>
+            <class name = "Day7.ParallelTesting._04_Groups.TestClass2"></class>
+        </classes>
+    </test>
+
+</suite>
