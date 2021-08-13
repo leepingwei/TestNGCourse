@@ -1,0 +1,7 @@
+<suite name = "Parallel Test For Methods">
+    <test name = "Parallel Execution" parallel = "methods" thread-count = "3">
+        <classes>
+            <class name = "Day7.ParallelTesting._01_Methods.ParallelTestForMethods"></class>
+        </classes>
+    </test>
+</suite>
