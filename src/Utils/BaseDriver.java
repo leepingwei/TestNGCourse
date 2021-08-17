@@ -10,6 +10,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseDriver {
 
     // Webdriver driver - Access Modifier:
@@ -27,6 +29,8 @@ public class BaseDriver {
             System.setProperty("webdriver.gecko.driver", "/Library/Selenium/geckodriver/geckodriver");
             driver = new FirefoxDriver();
         }
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
         driver.get("http://opencart.abstracta.us/index.php?route=common/home");
