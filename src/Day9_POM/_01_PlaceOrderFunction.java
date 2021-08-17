@@ -10,8 +10,6 @@ public class _01_PlaceOrderFunction extends BaseDriver {
     @Test
     public void placeOrderTest() {
 
-        ReusableMethods reusableMethods = new ReusableMethods();
-
         _001_HomePageElements HomepageElements = new _001_HomePageElements(driver);
         _002_PlaceOrderElements PlaceOrderElements = new _002_PlaceOrderElements(driver);
 
