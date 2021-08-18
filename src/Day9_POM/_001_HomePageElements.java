@@ -12,9 +12,9 @@ public class _001_HomePageElements {
     }
 
     @FindBy(xpath = "//input[@name='search']")
-    WebElement searchInput;
+    public WebElement searchInput;
 
     @FindBy(xpath = "//button[@class='btn btn-default btn-lg']")
-    WebElement searchButton;
+    public WebElement searchButton;
 
 }
