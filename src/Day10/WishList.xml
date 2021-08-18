@@ -1,0 +1,8 @@
+<suite name = "WishList Test Suite">
+    <test name = "Test">
+        <parameter name = "browser" value = "chrome"></parameter>
+        <classes>
+            <class name = "Day10._01_WishListFunction"></class>
+        </classes>
+    </test>
+</suite>
